@@ -27,18 +27,49 @@ class Masina extends Model
 {
     use HasFactory;
 
-    /**
-     * @var string[]
-     */
-    private $guarded;
+    protected $table = 'tblMasina';
 
-    public function _construct()
-    {
-        $this->connection = env('DB_CONNECTION');
-        $this->table = env('DB_DATABASE') . '.' . 'tblMasina';
-        $this->primaryKey = 'idMasina';
-        $this->guarded = ['idMasina'];
-    }
+    protected $columns = [
+        'idMasina' => [
+            'label' => 'idMasina'
+        ],
+        'idLocatieActuala' => [
+            'label' => 'idLocatieActuala'
+        ],
+        'categorie' => [
+            'label' => 'categorie'
+        ],
+        'marca' => [
+            'label' => 'marca'
+        ],
+        'model' => [
+            'label' => 'model'
+        ],
+        'anFabricatie' => [
+            'label' => 'anFabricatie'
+        ],
+        'serieSasiu' => [
+            'label' => 'serieSasiu'
+        ],
+        'serieCarteIdentitate' => [
+            'label' => 'serieCarteIdentitate'
+        ],
+        'nrInmatriculare' => [
+            'label' => 'nrInmatriculare'
+        ],
+        'tipMotor' => [
+            'label' => 'tipMotor'
+        ],
+        'tipTransmisie' => [
+            'label' => 'tipTransmisie'
+        ],
+        'nrPasageri' => [
+            'label' => 'nrPasageri'
+        ],
+        'nrUsi' => [
+            'label' => 'nrUsi'
+        ]
+    ];
 
     /**
      * @return BelongsToMany

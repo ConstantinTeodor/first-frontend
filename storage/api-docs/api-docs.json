@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/masini": {
+            "get": {
+                "tags": [
+                    "Masini"
+                ],
+                "summary": "Returneaza toate masinile",
+                "description": "Returneaza toate masinile",
+                "operationId": "5f5357623f8cf359d92f8ad25e6c475d",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/masini/{id}": {
+            "get": {
+                "tags": [
+                    "Masini"
+                ],
+                "summary": "Returneaza masina cu id-ul dat",
+                "description": "Returneaza masina cu id-ul dat",
+                "operationId": "bb9972cfb89cdf97f196da3075ceec61",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul masinii dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}
