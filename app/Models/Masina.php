@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property int $nrUsi
  */
 
-Class Masina extends Model
+class Masina extends Model
 {
     use HasFactory;
 
