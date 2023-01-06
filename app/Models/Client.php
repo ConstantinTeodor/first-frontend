@@ -21,13 +21,30 @@ class Client extends Model
 {
     use HasFactory;
 
-    public function _construct()
-    {
-        $this->connection = env('DB_CONNECTION');
-        $this->table = env('DB_DATABASE') . '.' . 'tblClient';
-        $this->primaryKey = 'idClient';
-        $this->guarded = ['idClient'];
-    }
+    protected $table = 'tblClient';
+
+    protected $columns = [
+        'idClient' => [
+            'label' => 'idClient'
+        ],
+        'CNP' => [
+            'label' => 'CNP'
+        ],
+        'nume' => [
+            'label' => 'nume'
+        ],
+        'prenume' => [
+            'label' => 'prenume'
+        ],
+        'nrTelefon' => [
+            'label' => 'nrTelefon'
+        ],
+        'email' => [
+            'label' => 'email'
+        ]
+    ];
+
+    protected $primaryKey = 'idClient';
 
     /**
      * @return BelongsToMany

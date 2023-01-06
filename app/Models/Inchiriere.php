@@ -22,11 +22,34 @@ class Inchiriere extends Model
 {
     use HasFactory;
 
-    public function _construct()
-    {
-        $this->connection = env('DB_CONNECTION');
-        $this->table = env('DB_DATABASE') . '.' . 'tblInchiriere';
-        $this->primaryKey = 'idInchiriere';
-        $this->guarded = ['idInchiriere'];
-    }
+    protected $table = 'tblInchirirere';
+
+    protected $columns = [
+        'idInchiriere' => [
+            'label' => 'idInchiriere'
+        ],
+        'idClient' => [
+            'label' => 'idClient'
+        ],
+        'idMasina' => [
+            'label' => 'idMasina'
+        ],
+        'dataInchiriere' => [
+            'label' => 'dataInchiriere'
+        ],
+        'dataPredareLimita' => [
+            'label' => 'dataPredareLimita'
+        ],
+        'dataPredareEfectiva' => [
+            'label' => 'dataPredareEfectiva'
+        ],
+        'idLocatieInchiriere' => [
+            'label' => 'idLocatieInchiriere'
+        ],
+        'idLocatiePredare' => [
+            'label' => 'idLocatiePredare'
+        ]
+    ];
+
+    protected $primaryKey = 'idInchiriere';
 }

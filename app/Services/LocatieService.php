@@ -13,10 +13,6 @@ class LocatieService
 
     public function setProperties(Locatie $locatie, array $properties): void
     {
-        if (!empty($properties['idLocatie'])) {
-            $locatie->idLocatie = $properties['idLocatie'];
-        }
-
         if (!empty($properties['adresa'])) {
             $locatie->adresa = $properties['adresa'];
         }

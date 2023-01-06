@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  *  App\Models\Client
  * @property int $idLocatie
  * @property string $adresa
- * @property int $codPostal
+ * @property string $codPostal
  * @property string $email
  * @property string $nrTelefon
  */
@@ -19,13 +19,27 @@ class Locatie extends Model
 {
     use HasFactory;
 
-    public function _construct()
-    {
-        $this->connection = env('DB_CONNECTION');
-        $this->table = env('DB_DATABASE') . '.' . 'tblLocatie';
-        $this->primaryKey = 'idLocatie';
-        $this->guarded = ['idLocatie'];
-    }
+    protected $table = 'tblLocatie';
+
+    protected $columns = [
+        'idLocatie' => [
+            'label' => 'idLocatie'
+        ],
+        'adresa' => [
+            'label' => 'adresa'
+        ],
+        'codPostal' => [
+            'label' => 'codPostal'
+        ],
+        'email' => [
+            'label' => 'email'
+        ],
+        'nrTelefon' => [
+            'label' => 'nrTelefon'
+        ]
+    ];
+
+    protected $primaryKey = 'idLocatie';
 
     /**
      * @return HasMany

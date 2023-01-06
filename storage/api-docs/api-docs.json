@@ -5,6 +5,538 @@
         "version": "0.1"
     },
     "paths": {
+        "/clienti": {
+            "get": {
+                "tags": [
+                    "Clienti"
+                ],
+                "summary": "Returneaza toti clientii",
+                "description": "Returneaza toti clientii",
+                "operationId": "1649e86b74af2c06f91fd92bf6e168a5",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Clienti"
+                ],
+                "summary": "Update clientul cu id-ul dat",
+                "description": "Update clientul cu id-ul dat",
+                "operationId": "9964293bc3eb922172f89f144436de11",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idClient": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "$CNP": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "2821205341248"
+                                    },
+                                    "$nume": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Popescu"
+                                    },
+                                    "$prenume": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Maria"
+                                    },
+                                    "$nrTelefon": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "+40744055645"
+                                    },
+                                    "$email": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "popescu_maria01@gmail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Clienti"
+                ],
+                "summary": "Adauga clientul",
+                "description": "Adauga clientul",
+                "operationId": "3739227e52437c5676011fcc46a3f6d7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "$CNP": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "2821205341248"
+                                    },
+                                    "$nume": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Popescu"
+                                    },
+                                    "$prenume": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Maria"
+                                    },
+                                    "$nrTelefon": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "+40744055645"
+                                    },
+                                    "$email": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "popescu_maria01@gmail.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/clienti/{id}": {
+            "get": {
+                "tags": [
+                    "Clienti"
+                ],
+                "summary": "Returneaza clientul cu id-ul dat",
+                "description": "Returneaza clientul cu id-ul dat",
+                "operationId": "781265d2e3333ddf6dd01fcd8f78a3b0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul clientului dorit",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Clienti"
+                ],
+                "summary": "Sterge clientul cu id-ul dat",
+                "description": "Sterge clientul cu id-ul dat",
+                "operationId": "e80705797027dc8808498bacc0a65aa3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul clientului dorit",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/inchirieri": {
+            "get": {
+                "tags": [
+                    "Inchirieri"
+                ],
+                "summary": "Returneaza toate inchirierile",
+                "description": "Returneaza toate inchirierile",
+                "operationId": "29ae57419888b98b0caba889bd667970",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Inchirieri"
+                ],
+                "summary": "Update inchirierea cu id-ul dat",
+                "description": "Update inchirierea cu id-ul dat",
+                "operationId": "55db621f52d27ccbde20a8825ace63c8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idInchiriere": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "idClient": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "idMasina": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "dataInchiriere": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-17"
+                                    },
+                                    "dataPredareLimita": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-23"
+                                    },
+                                    "dataPredareEfectiva": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-23"
+                                    },
+                                    "idLocatieInchiriere": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "idLocatiePredare": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 3
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Inchirieri"
+                ],
+                "summary": "Adauga inchirierea",
+                "description": "Adauga inchirierea",
+                "operationId": "f2a3b0c34553294d5f6a12ebe1129eed",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idClient": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "idMasina": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "dataInchiriere": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-17"
+                                    },
+                                    "dataPredareLimita": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-23"
+                                    },
+                                    "dataPredareEfectiva": {
+                                        "description": "",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-10-23"
+                                    },
+                                    "idLocatieInchiriere": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "idLocatiePredare": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 3
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/inchirieri/{id}": {
+            "get": {
+                "tags": [
+                    "Inchirieri"
+                ],
+                "summary": "Returneaza inchirierea cu id-ul dat",
+                "description": "Returneaza inchirierea cu id-ul dat",
+                "operationId": "896f541c60cf3169df364a3289be6ad5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul inchirierii dorit",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Inchirieri"
+                ],
+                "summary": "Sterge inchirierea cu id-ul dat",
+                "description": "Sterge inchirierea cu id-ul dat",
+                "operationId": "248c1f7752815d2d3a3c155f5c0f2f53",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul inchirierii dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/locatii": {
+            "get": {
+                "tags": [
+                    "Locatii"
+                ],
+                "summary": "Returneaza toate locatiile",
+                "description": "Returneaza toate locatiile",
+                "operationId": "5f3129f95fc5428b82ec5ee009a3592a",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Locatii"
+                ],
+                "summary": "Update locatia cu id-ul dat",
+                "description": "Update locatia cu id-ul dat",
+                "operationId": "d9faba072eeebbc5c15ac5b82a257e8b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idLocatie": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "adresa": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Bucuresti, Bd. Iuliu Maniu, Nr. 54"
+                                    },
+                                    "codPostal": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 63423
+                                    },
+                                    "email": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "bucuresti@first.ro"
+                                    },
+                                    "nrTelefon": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "+40244234340"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Locatii"
+                ],
+                "summary": "Adauga locatia",
+                "description": "Adauga locatia",
+                "operationId": "59ab050f56596bd67396d73736b3b0e1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "adresa": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Bucuresti, Bd. Iuliu Maniu, Nr. 54"
+                                    },
+                                    "codPostal": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "063423"
+                                    },
+                                    "email": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "bucuresti@first.ro"
+                                    },
+                                    "nrTelefon": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "+40244234340"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/locatii/{id}": {
+            "get": {
+                "tags": [
+                    "Locatii"
+                ],
+                "summary": "Returneaza locatia cu id-ul dat",
+                "description": "Returneaza locatia cu id-ul dat",
+                "operationId": "d8a971a21e9eeea46c93a2fdce9bf581",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul locatiaui dorit",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Locatii"
+                ],
+                "summary": "Sterge locatia cu id-ul dat",
+                "description": "Sterge locatia cu id-ul dat",
+                "operationId": "3923373523ac5f47ce43e1f624ee884e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul locatiei dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
         "/masini": {
             "get": {
                 "tags": [
@@ -13,6 +545,181 @@
                 "summary": "Returneaza toate masinile",
                 "description": "Returneaza toate masinile",
                 "operationId": "5f5357623f8cf359d92f8ad25e6c475d",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Masini"
+                ],
+                "summary": "Update masina cu id-ul dat",
+                "description": "Update masina cu id-ul dat",
+                "operationId": "a8a7e40a7d1c28312ab78708a87cd6c2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idMasina": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "idLocatieActuala": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "categorie": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Economy"
+                                    },
+                                    "marca": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Volkswagen"
+                                    },
+                                    "model": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Golf"
+                                    },
+                                    "anFabricatie": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 2023
+                                    },
+                                    "serieSasiu": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "NR916E9LP5"
+                                    },
+                                    "serieCarteIdentitate": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "3DEO7J5B7V"
+                                    },
+                                    "nrInmatriculare": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "B 20 FIR"
+                                    },
+                                    "tipMotor": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Benzina"
+                                    },
+                                    "tipTransmisie": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "manuala"
+                                    },
+                                    "nrPasageri": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 7
+                                    },
+                                    "nrUsi": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 5
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Masini"
+                ],
+                "summary": "Adauga masina",
+                "description": "Adauga masina",
+                "operationId": "0ef89cc08694883a9e580b24f9169141",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idLocatieActuala": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "categorie": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Economy"
+                                    },
+                                    "marca": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Volkswagen"
+                                    },
+                                    "model": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Golf"
+                                    },
+                                    "anFabricatie": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 2023
+                                    },
+                                    "serieSasiu": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "NR916E9LP5"
+                                    },
+                                    "serieCarteIdentitate": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "3DEO7J5B7V"
+                                    },
+                                    "nrInmatriculare": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "B 20 FIR"
+                                    },
+                                    "tipMotor": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "Benzina"
+                                    },
+                                    "tipTransmisie": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "manuala"
+                                    },
+                                    "nrPasageri": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 7
+                                    },
+                                    "nrUsi": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 5
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Success"
@@ -33,6 +740,193 @@
                         "name": "id",
                         "in": "path",
                         "description": "Id-ul masinii dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Masini"
+                ],
+                "summary": "Sterge masina cu id-ul dat",
+                "description": "Sterge masina cu id-ul dat",
+                "operationId": "c7b6575bebdce207e5267592025c30e6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul masinii dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/plati": {
+            "get": {
+                "tags": [
+                    "Plati"
+                ],
+                "summary": "Returneaza toate platile",
+                "description": "Returneaza toate platile",
+                "operationId": "06917be3a8aa107ce31a0cd06e478797",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Plati"
+                ],
+                "summary": "Update plata cu id-ul dat",
+                "description": "Update plata cu id-ul dat",
+                "operationId": "cdaa60f4d192c8eeea8a65bbdb755fc4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "idPlata": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "tipPlata": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "cash"
+                                    },
+                                    "idInchiriere": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "suma": {
+                                        "description": "",
+                                        "type": "number",
+                                        "example": 300.9
+                                    },
+                                    "statusPlata": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "achitata"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Plati"
+                ],
+                "summary": "Adauga plata",
+                "description": "Adauga plata",
+                "operationId": "db586b103db5d4951896bbd319fd62ff",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "tipPlata": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "cash"
+                                    },
+                                    "idInchiriere": {
+                                        "description": "",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "suma": {
+                                        "description": "",
+                                        "type": "number",
+                                        "example": 300.9
+                                    },
+                                    "statusPlata": {
+                                        "description": "",
+                                        "type": "string",
+                                        "example": "achitata"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/plati/{id}": {
+            "get": {
+                "tags": [
+                    "Plati"
+                ],
+                "summary": "Returneaza plata cu id-ul dat",
+                "description": "Returneaza plata cu id-ul dat",
+                "operationId": "5d50b02bb60761cd6717cac832bae14b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul platii dorite",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 30
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Plati"
+                ],
+                "summary": "Sterge plata cu id-ul dat",
+                "description": "Sterge plata cu id-ul dat",
+                "operationId": "9fbbff9a5518a2e07a1e11867b064d4f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id-ul platii dorite",
                         "required": true,
                         "schema": {
                             "type": "integer"

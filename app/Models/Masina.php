@@ -71,6 +71,8 @@ class Masina extends Model
         ]
     ];
 
+    protected $primaryKey = 'idMasina';
+
     /**
      * @return BelongsToMany
      */

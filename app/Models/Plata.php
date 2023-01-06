@@ -20,13 +20,27 @@ class Plata extends Model
 {
     use HasFactory;
 
-    public function _construct()
-    {
-        $this->connection = env('DB_CONNECTION');
-        $this->table = env('DB_DATABASE') . '.' . 'tblPlata';
-        $this->primaryKey = 'idPlata';
-        $this->guarded = ['idPlata'];
-    }
+    protected $table = 'tblPlata';
+
+    protected $columns = [
+        'idPlata' => [
+            'label' => 'idPlata'
+        ],
+        'tipPlata' => [
+            'label' => 'tipPlata'
+        ],
+        'idInchiriere' => [
+            'label' => 'idInchiriere'
+        ],
+        'suma' => [
+            'label' => 'suma'
+        ],
+        'statusPlata' => [
+            'label' => 'statusPlata'
+        ]
+    ];
+
+    protected $primaryKey = 'idPlata';
 
     /**
      * @return BelongsTo
