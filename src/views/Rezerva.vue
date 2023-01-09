@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container pt-3">
+                <div v-if="inchirieri.length" class="container pt-3">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <card shadow body-classes="p-lg-5">
@@ -130,9 +130,7 @@ export default {
         };
     },
     mounted() {
-        this.saveData();
-        this.saveCars();
-        this.saveLocations();
+        this.updateData();
     },
     watch: {
         selectedClient: function () {
@@ -145,6 +143,13 @@ export default {
         }
     },
     methods: {
+        updateData() {
+            this.saveInchirieri();
+            this.saveData();
+            this.saveCars();
+            this.saveLocations();
+        },
+
         masina(rezervare) {
             return this.masini.find(masina => masina.idMasina === toInteger(rezervare.idMasina));
         },
@@ -264,14 +269,18 @@ export default {
         remove(rez) {
             const options = {
                 method: 'DELETE',
-                url: 'http://127.0.0.1:8000/inchirieri/' + toInteger(rez.idInchiriere),
+                url: 'http://127.0.0.1:8000/inchirieri',
                 headers: {
                     accept: 'application/json; charset=utf-8',
                     'Access-Control-Allow-Origin': 'origin-list'
                 },
+                data: {
+                    'id': toInteger(rez.idInchiriere)
+                }
             };
             this.getRemove(options)
                 .then(response => {
+                    this.updateData();
                     console.log(response);
                 })
         },
@@ -302,6 +311,7 @@ export default {
             };
             this.getSave(options)
                 .then(response => {
+                    this.updateData();
                     console.log(response);
                 })
         },
@@ -335,6 +345,7 @@ export default {
                 };
                 this.getSend(options)
                     .then(response => {
+                        this.updateData();
                         console.log(response);
                     })
             }
@@ -371,4 +382,5 @@ export default {
     ::-webkit-scrollbar-thumb {
         background: lightgreen;
     }
+
 </style>
